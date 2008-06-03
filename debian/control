@@ -9,6 +9,7 @@ Homepage: http://www.gnupg.org
 Package: gnupg
 Architecture: any
 Depends: ${shlibs:Depends}, gpgv
+Recommends: ${shlibs:Recommends}
 Suggests: gnupg-doc, xloadimage | imagemagick | eog, libpcsclite1
 Conflicts: gpg-rsa, gpg-rsaref, suidmanager (<< 0.50), gpg-idea (<= 2.2)
 Replaces: gpg-rsa, gpg-rsaref
