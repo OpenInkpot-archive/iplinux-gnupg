@@ -1,3 +1,16 @@
+gnupg (1.4.9-1) unstable; urgency=low
+
+  * New upstream release 1.4.9 (Closes: #452118). Based on Daniel Leiderts work
+    - Removed shutdown code in util/http.c (Closes: #201589).
+    - Limit bytes read for an unknown alogorithm (Closes: #402592).
+    - Build changes to fully evaluate paths (Closes: #402958, #412508, #420613).
+    - Decrypt multiple files and not just the first (Closes: #431828).
+    - Fixes yat2m and gpg.texi to fix formatting in the man-page
+     (Closes: #445328).
+    - Localizaton update for German locale (closes: #296128).
+
+ -- Sune Vuorela <debian@pusling.com>  Sun, 01 Jun 2008 21:21:10 +0200
+
 gnupg (1.4.6-3) unstable; urgency=low
 
   * Adopt package. Thanks to James Troup for his work in the far past.
