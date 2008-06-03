@@ -53,8 +53,6 @@ test: build
 clean: unpatch
 	$(checkdir)
 	-rm -f build
-	-$(MAKE) -C build-deb -i distclean || $(MAKE) -C build-deb -f Makefile.in distclean
-	-$(MAKE) -C build-udeb -i distclean || $(MAKE) -C build-udeb -f Makefile.in distclean
 	-rm -rf build-deb build-udeb debian/gpgv-udeb debian/gnupg-udeb debian/gpgv
 	-rm -rf debian/tmp debian/patched debian/files* debian/*substvars
 	find . -name \*~ | xargs rm -vf
