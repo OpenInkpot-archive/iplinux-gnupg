@@ -28,6 +28,7 @@ gnupg (1.4.9-1) unstable; urgency=low
     cases. (Closes: 399167)
   * Add manpage to gpg-zip. Thanks to Colin Tuckley and Daniel Leidert
   * Bump standards.
+  * Add Homepage field to debian/control
 
  -- Sune Vuorela <debian@pusling.com>  Sun, 01 Jun 2008 21:21:10 +0200
 
