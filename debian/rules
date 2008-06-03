@@ -38,6 +38,9 @@ build-deb-stamp: patch-stamp
 	mkdir -p build-deb
 	cd build-deb && ../configure $(CONFARGS) $(HOSTARG)
 	$(MAKE) -C build-deb
+ifeq (,$(findstring nocheck,$(DEB_BUILD_OPTIONS)))                                                
+	$(MAKE) -C build-deb check                                                                 
+endif     
 	touch $@
 
 build-udeb-stamp: patch-stamp
@@ -45,6 +48,9 @@ build-udeb-stamp: patch-stamp
 	mkdir -p build-udeb
 	cd build-udeb && CFLAGS='-g -Os' ../configure $(CONFARGS) $(HOSTARG) --without-bzip2 --without-readline
 	$(MAKE) -C build-udeb
+ifeq (,$(findstring nocheck,$(DEB_BUILD_OPTIONS)))                                                            
+	$(MAKE) -C build-udeb check                                                                            
+endif      
 	touch $@
 
 build: build-deb-stamp build-udeb-stamp
