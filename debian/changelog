@@ -4,8 +4,9 @@ gnupg (1.4.9-2) unstable; urgency=low
     maintained
   * Really enable patches added earlier. (Really Closes: #394037, #298699)
   * Add a seahorse conflicts as the seahorse maintainer like.
+  * remove stamp files in clean
 
- -- Sune Vuorela <debian@pusling.com>  Wed, 04 Jun 2008 00:41:11 +0200
+ -- Sune Vuorela <debian@pusling.com>  Wed, 04 Jun 2008 00:47:13 +0200
 
 gnupg (1.4.9-1) unstable; urgency=low
 

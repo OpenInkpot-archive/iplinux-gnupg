@@ -67,6 +67,7 @@ clean: unpatch
 	rm -f build
 	rm -rf build-deb build-udeb debian/gpgv-udeb debian/gnupg-udeb debian/gpgv
 	rm -rf debian/tmp debian/patched debian/files* debian/*substvars
+	rm -f build-udeb-stamp build-deb-stamp
 	find . -name \*~ | xargs rm -vf
 
 binary-indep:
