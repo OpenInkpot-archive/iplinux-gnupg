@@ -17,16 +17,18 @@ ifneq ($(DEB_BUILD_GNU_TYPE),$(DEB_HOST_GNU_TYPE))
 HOSTARG = --host=$(DEB_HOST_GNU_TYPE)
 endif
 
+
 CONFARGS = --prefix=/usr --libexecdir=/usr/lib/ --enable-mailto --with-mailprog=/usr/sbin/sendmail
 
 install_dir=install -d -m 755
 install_file=install -m 644
 install_script=install -m 755
-install_binary=install -m 755                                                                     
-                                                                                                  
-ifeq (,$(findstring nostrip,$(DEB_BUILD_OPTIONS)))                                                
-       install_binary += -s                                                                       
-endif  
+install_binary=install -m 755
+ 
+ifeq (,$(findstring nostrip,$(DEB_BUILD_OPTIONS)))
+       install_binary += -s
+endif
+
 
 VERSION := $(shell dpkg-parsechangelog | grep ^Version: | cut -d' ' -f2)
 DEB_BUILD_ARCH := $(shell dpkg-architecture -qDEB_BUILD_ARCH)
@@ -38,9 +40,9 @@ build-deb-stamp: patch-stamp
 	mkdir -p build-deb
 	cd build-deb && ../configure $(CONFARGS) $(HOSTARG)
 	$(MAKE) -C build-deb
-ifeq (,$(findstring nocheck,$(DEB_BUILD_OPTIONS)))                                                
-	$(MAKE) -C build-deb check                                                                 
-endif     
+ifeq (,$(findstring nocheck,$(DEB_BUILD_OPTIONS)))
+	$(MAKE) -C build-deb check
+endif
 	touch $@
 
 build-udeb-stamp: patch-stamp
@@ -48,9 +50,9 @@ build-udeb-stamp: patch-stamp
 	mkdir -p build-udeb
 	cd build-udeb && CFLAGS='-g -Os' ../configure $(CONFARGS) $(HOSTARG) --without-bzip2 --without-readline
 	$(MAKE) -C build-udeb
-ifeq (,$(findstring nocheck,$(DEB_BUILD_OPTIONS)))                                                            
-	$(MAKE) -C build-udeb check                                                                            
-endif      
+ifeq (,$(findstring nocheck,$(DEB_BUILD_OPTIONS)))
+	$(MAKE) -C build-udeb check
+endif
 	touch $@
 
 build: build-deb-stamp build-udeb-stamp
@@ -74,8 +76,6 @@ binary-arch:	checkroot build # test
 
 	: # gnupg
 	rm -rf debian/tmp
-	$(install_dir) debian/tmp/DEBIAN/
-	$(install_script) debian/preinst debian/tmp/DEBIAN/
 	$(MAKE) -C build-deb prefix=`pwd`/debian/tmp/usr mandir=`pwd`/debian/tmp/usr/share/man libexecdir=`pwd`/debian/tmp/usr/lib/ mkinstalldirs=`pwd`/scripts/mkinstalldirs install
 	: # copies of the manpage which can't be grokked by install-info
 	rm debian/tmp/usr/share/info/*
@@ -87,7 +87,7 @@ binary-arch:	checkroot build # test
 	sed -e "s#/usr/local/#/usr/#" < debian/tmp/usr/share/man/man1/gpg.1 \
 	    > debian/tmp/usr/share/man/man1/gpg.1.new
 	mv debian/tmp/usr/share/man/man1/gpg.1.new debian/tmp/usr/share/man/man1/gpg.1
-	$(install_file) debian/gpg-convert-from-106.1 debian/gpgsplit.1 \
+	$(install_file) debian/gpg-convert-from-106.1 debian/gpgsplit.1 debian/gpg-zip.1 \
 			debian/lspgpot.1 debian/tmp/usr/share/man/man1/
 	gzip -9v debian/tmp/usr/share/man/man*/*
 	: # Move localized manpages to FHS compliant locations
@@ -97,7 +97,7 @@ binary-arch:	checkroot build # test
 	rm debian/tmp/usr/share/gnupg/FAQ debian/tmp/usr/share/gnupg/faq.html
 	$(install_dir) debian/tmp/usr/share/doc/gnupg/
 	$(install_file) debian/changelog debian/tmp/usr/share/doc/gnupg/changelog.Debian
-	$(install_file) debian/README.Debian README NEWS THANKS TODO doc/DETAILS \
+	$(install_file) README NEWS THANKS TODO doc/DETAILS \
 		doc/FAQ doc/faq.html doc/OpenPGP debian/Upgrading_From_PGP.txt \
 		doc/highlights-1.4.txt debian/tmp/usr/share/doc/gnupg/
 	for i in po util mpi cipher tools g10 checks include; do \
@@ -113,12 +113,13 @@ binary-arch:	checkroot build # test
 
 	find debian/tmp/ -type d -empty | xargs rmdir
 
-	#find debian/tmp/ -type f | xargs file | grep ELF | cut -d: -f 1 | xargs dpkg-shlibdeps                                                                                      
-	find debian/tmp/ -path debian/tmp/usr/lib/gnupg/gpgkeys_ldap \                                                                                                               
-		-or -type f -print | \                                                                                                                                               
-		xargs file | grep ELF | cut -d: -f 1 | \                                                                                                                             
-		xargs dpkg-shlibdeps \                                                                                                                                               
-		-dRecommends debian/tmp/usr/lib/gnupg/gpgkeys_ldap -dDepends  
+	#find debian/tmp/ -type f | xargs file | grep ELF | cut -d: -f 1 | xargs dpkg-shlibdeps
+	find debian/tmp/ -path debian/tmp/usr/lib/gnupg/gpgkeys_ldap \
+		-or -type f -print | \
+		xargs file | grep ELF | cut -d: -f 1 | \
+		xargs dpkg-shlibdeps \
+		-dRecommends debian/tmp/usr/lib/gnupg/gpgkeys_ldap -dDepends
+	$(install_dir) debian/tmp/DEBIAN/
 	cd debian/tmp && find * -type f | grep -v DEBIAN | xargs md5sum > DEBIAN/md5sums
 	dpkg-gencontrol -pgnupg -isp
 	chown -R root.root debian/tmp

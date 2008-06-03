@@ -5,7 +5,7 @@ gnupg (1.4.9-1) unstable; urgency=low
     - Limit bytes read for an unknown alogorithm (Closes: #402592).
     - Build changes to fully evaluate paths (Closes: #402958, #412508, #420613).
     - Decrypt multiple files and not just the first (Closes: #431828).
-    - Fixes yat2m and gpg.texi to fix formatting in the man-page
+    - Fixes yat2m and gpg.texi to fix formatting in the man-page 
      (Closes: #445328).
     - Localizaton update for German locale (closes: #296128).
   * Remove patch 28_multiple_message.dpatch, implemented upstream
@@ -17,9 +17,9 @@ gnupg (1.4.9-1) unstable; urgency=low
       correct handling of backslahes and fixing the samples output format
       avoiding man-db warnings.
   * Redo patches with dpatch-run instead of big patch blurb in the patches.
-  * Updated and added some tranlations (patch 25*)
+  * Updated and added some tranlations (patch 25*) 
     (French: Closes: #394037) (Italian: Closes: #298699)
-  * Have gpg suggest libpcsclite1 (Closes: #297253) and a couple of image
+  * Have gpg suggest libpcsclite1 (Closes: #297253) and a couple of image 
     viewers (Closes: #381419).
   * No need to clean up in builddir before removing builddir
   * if rm -rf fails, we should also fail
