@@ -8,7 +8,7 @@ Build-Depends: libz-dev, libldap2-dev, libbz2-dev, libcap-dev [!kfreebsd-i386 !k
 Package: gnupg
 Architecture: any
 Depends: ${shlibs:Depends}, gpgv
-Suggests: gnupg-doc, xloadimage
+Suggests: gnupg-doc, xloadimage | imagemagick | eog, libpcsclite1
 Conflicts: gpg-rsa, gpg-rsaref, suidmanager (<< 0.50), gpg-idea (<= 2.2)
 Replaces: gpg-rsa, gpg-rsaref
 Provides: gpg-rsa, gpg-rsaref

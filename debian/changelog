@@ -18,6 +18,8 @@ gnupg (1.4.9-1) unstable; urgency=low
       avoiding man-db warnings.
   * Updated and added some tranlations (patch 25*)
     (French: Closes: #394037) (Italian: Closes: #298699)
+  * Have gpg suggest libpcsclite1 (Closes: #297253) and a couple of image
+    viewers (Closes: #381419).
 
  -- Sune Vuorela <debian@pusling.com>  Sun, 01 Jun 2008 21:21:10 +0200
 
