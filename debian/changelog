@@ -1,3 +1,10 @@
+gnupg (1.4.9-2) unstable; urgency=low
+
+  * Switch maintainer to maillist. This package is now official team
+    maintained
+
+ -- Sune Vuorela <debian@pusling.com>  Wed, 04 Jun 2008 00:41:11 +0200
+
 gnupg (1.4.9-1) unstable; urgency=low
 
   * New upstream release 1.4.9 (Closes: #452118). Based on Daniel Leiderts work
