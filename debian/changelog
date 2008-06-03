@@ -27,6 +27,7 @@ gnupg (1.4.9-1) unstable; urgency=low
   * Don't depend, but recommend libldap, this is only needed in some
     cases. (Closes: 399167)
   * Add manpage to gpg-zip. Thanks to Colin Tuckley and Daniel Leidert
+  * Bump standards.
 
  -- Sune Vuorela <debian@pusling.com>  Sun, 01 Jun 2008 21:21:10 +0200
 
