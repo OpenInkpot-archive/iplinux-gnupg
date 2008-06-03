@@ -8,6 +8,7 @@ gnupg (1.4.9-1) unstable; urgency=low
     - Fixes yat2m and gpg.texi to fix formatting in the man-page
      (Closes: #445328).
     - Localizaton update for German locale (closes: #296128).
+  * Remove patch 28_multiple_message.dpatch, implemented upstream
 
  -- Sune Vuorela <debian@pusling.com>  Sun, 01 Jun 2008 21:21:10 +0200
 
