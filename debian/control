@@ -12,7 +12,7 @@ Architecture: any
 Depends: ${shlibs:Depends}, gpgv
 Recommends: ${shlibs:Recommends}
 Suggests: gnupg-doc, xloadimage | imagemagick | eog, libpcsclite1
-Conflicts: gpg-rsa, gpg-rsaref, suidmanager (<< 0.50), gpg-idea (<= 2.2)
+Conflicts: gpg-rsa, gpg-rsaref, suidmanager (<< 0.50), gpg-idea (<= 2.2), seahorse (<< 2.22.2-2)
 Replaces: gpg-rsa, gpg-rsaref
 Provides: gpg-rsa, gpg-rsaref
 Description: GNU privacy guard - a free PGP replacement
