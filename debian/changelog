@@ -12,6 +12,10 @@ gnupg (1.4.9-1) unstable; urgency=low
   * Remove ancient preinst script to support upgrades back in 1998
   * README.Debian is related to the ancient preinst script, so remove it as
     well.
+  * debian/patches/99_yat2m_fix_samp_handling.dpatch: Added.
+    - doc/yat2m.c: Backport two fixes from the upstream SVN regarding the
+      correct handling of backslahes and fixing the samples output format
+      avoiding man-db warnings.
 
  -- Sune Vuorela <debian@pusling.com>  Sun, 01 Jun 2008 21:21:10 +0200
 
