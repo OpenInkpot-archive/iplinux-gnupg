@@ -107,7 +107,12 @@ binary-arch:	checkroot build # test
 
 	find debian/tmp/ -type d -empty | xargs rmdir
 
-	find debian/tmp/ -type f | xargs file | grep ELF | cut -d: -f 1 | xargs dpkg-shlibdeps
+	#find debian/tmp/ -type f | xargs file | grep ELF | cut -d: -f 1 | xargs dpkg-shlibdeps                                                                                      
+	find debian/tmp/ -path debian/tmp/usr/lib/gnupg/gpgkeys_ldap \                                                                                                               
+		-or -type f -print | \                                                                                                                                               
+		xargs file | grep ELF | cut -d: -f 1 | \                                                                                                                             
+		xargs dpkg-shlibdeps \                                                                                                                                               
+		-dRecommends debian/tmp/usr/lib/gnupg/gpgkeys_ldap -dDepends  
 	cd debian/tmp && find * -type f | grep -v DEBIAN | xargs md5sum > DEBIAN/md5sums
 	dpkg-gencontrol -pgnupg -isp
 	chown -R root.root debian/tmp

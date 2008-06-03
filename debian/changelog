@@ -24,6 +24,8 @@ gnupg (1.4.9-1) unstable; urgency=low
   * if rm -rf fails, we should also fail
   * Handle DEB_BUILD_OPTIONS=nostrip in debian/rules (Closes: #437050)
   * add md5sums to package (Closes: 430459)
+  * Don't depend, but recommend libldap, this is only needed in some
+    cases. (Closes: 399167)
 
  -- Sune Vuorela <debian@pusling.com>  Sun, 01 Jun 2008 21:21:10 +0200
 
