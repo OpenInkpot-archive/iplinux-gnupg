@@ -108,6 +108,7 @@ binary-arch:	checkroot build # test
 	find debian/tmp/ -type d -empty | xargs rmdir
 
 	find debian/tmp/ -type f | xargs file | grep ELF | cut -d: -f 1 | xargs dpkg-shlibdeps
+	cd debian/tmp && find * -type f | grep -v DEBIAN | xargs md5sum > DEBIAN/md5sums
 	dpkg-gencontrol -pgnupg -isp
 	chown -R root.root debian/tmp
 	chmod -R go=rX debian/tmp
@@ -131,6 +132,7 @@ binary-arch:	checkroot build # test
 	$(install_file) debian/copyright debian/gpgv/usr/share/doc/gpgv/
 
 	find debian/gpgv/ -type f | xargs file | grep ELF | cut -d: -f 1 | xargs dpkg-shlibdeps
+	cd debian/gpgv && find * -type f | grep -v DEBIAN | xargs md5sum > DEBIAN/md5sums
 	dpkg-gencontrol -pgpgv -Pdebian/gpgv -isp
 	chown -R root.root debian/gpgv
 	chmod -R go=rX debian/gpgv
