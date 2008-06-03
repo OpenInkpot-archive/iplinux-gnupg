@@ -52,9 +52,9 @@ test: build
 
 clean: unpatch
 	$(checkdir)
-	-rm -f build
-	-rm -rf build-deb build-udeb debian/gpgv-udeb debian/gnupg-udeb debian/gpgv
-	-rm -rf debian/tmp debian/patched debian/files* debian/*substvars
+	rm -f build
+	rm -rf build-deb build-udeb debian/gpgv-udeb debian/gnupg-udeb debian/gpgv
+	rm -rf debian/tmp debian/patched debian/files* debian/*substvars
 	find . -name \*~ | xargs rm -vf
 
 binary-indep:
@@ -63,7 +63,7 @@ binary-arch:	checkroot build # test
 	$(checkdir)
 
 	: # gnupg
-	-rm -rf debian/tmp
+	rm -rf debian/tmp
 	$(install_dir) debian/tmp/DEBIAN/
 	$(install_script) debian/preinst debian/tmp/DEBIAN/
 	$(MAKE) -C build-deb prefix=`pwd`/debian/tmp/usr mandir=`pwd`/debian/tmp/usr/share/man libexecdir=`pwd`/debian/tmp/usr/lib/ mkinstalldirs=`pwd`/scripts/mkinstalldirs install
@@ -110,7 +110,7 @@ binary-arch:	checkroot build # test
 	dpkg --build debian/tmp ..
 
 	: # gpgv
-	-rm -rf debian/gpgv
+	rm -rf debian/gpgv
 	$(install_dir) debian/gpgv/DEBIAN/ 
 
 	$(install_dir) debian/gpgv/usr/bin/
