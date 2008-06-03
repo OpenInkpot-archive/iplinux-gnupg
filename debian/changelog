@@ -16,6 +16,7 @@ gnupg (1.4.9-1) unstable; urgency=low
     - doc/yat2m.c: Backport two fixes from the upstream SVN regarding the
       correct handling of backslahes and fixing the samples output format
       avoiding man-db warnings.
+  * Redo patches with dpatch-run instead of big patch blurb in the patches.
   * Updated and added some tranlations (patch 25*)
     (French: Closes: #394037) (Italian: Closes: #298699)
   * Have gpg suggest libpcsclite1 (Closes: #297253) and a couple of image

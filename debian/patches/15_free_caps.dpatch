@@ -1,4 +1,4 @@
-#! /bin/sh -e
+#! /bin/sh /usr/share/dpatch/dpatch-run
 ## 15_free_caps.dpatch by  <mpitt@debian.org>
 ##
 ## All lines beginning with `## DP:' are a description of the patch.
@@ -7,24 +7,6 @@
 ## DP: Please note that this approach alone is not safe: when using
 ## DP: USE_CAPABILITIES the root user is not setuid() back any more to a normal
 ## DP: user.
-
-if [ $# -lt 1 ]; then
-    echo "`basename $0`: script expects -patch|-unpatch as argument" >&2
-    exit 1
-fi
-
-[ -f debian/patches/00patch-opts ] && . debian/patches/00patch-opts
-patch_opts="${patch_opts:--f --no-backup-if-mismatch} ${2:+-d $2}"
-
-case "$1" in
-    -patch) patch -p1 ${patch_opts} < $0;;
-    -unpatch) patch -R -p1 ${patch_opts} < $0;;
-    *)
-        echo "`basename $0`: script expects -patch|-unpatch as argument" >&2
-        exit 1;;
-esac
-
-exit 0
 
 @DPATCH@
 diff -urNad /home/weasel/tmp/debian-gpg/gnupg-1.2.5/g10/status.c gnupg-1.2.5/g10/status.c
