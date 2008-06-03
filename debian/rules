@@ -22,7 +22,11 @@ CONFARGS = --prefix=/usr --libexecdir=/usr/lib/ --enable-mailto --with-mailprog=
 install_dir=install -d -m 755
 install_file=install -m 644
 install_script=install -m 755
-install_binary=install -m 755 -s
+install_binary=install -m 755                                                                     
+                                                                                                  
+ifeq (,$(findstring nostrip,$(DEB_BUILD_OPTIONS)))                                                
+       install_binary += -s                                                                       
+endif  
 
 VERSION := $(shell dpkg-parsechangelog | grep ^Version: | cut -d' ' -f2)
 DEB_BUILD_ARCH := $(shell dpkg-architecture -qDEB_BUILD_ARCH)
