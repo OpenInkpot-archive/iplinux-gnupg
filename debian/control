@@ -12,9 +12,7 @@ Architecture: any
 Depends: ${shlibs:Depends}, gpgv
 Recommends: ${shlibs:Recommends}
 Suggests: gnupg-doc, xloadimage | imagemagick | eog, libpcsclite1
-Conflicts: gpg-rsa, gpg-rsaref, suidmanager (<< 0.50), gpg-idea (<= 2.2), seahorse (<< 2.22.2-2)
-Replaces: gpg-rsa, gpg-rsaref
-Provides: gpg-rsa, gpg-rsaref
+Conflicts: seahorse (<< 2.22.2-2)
 Description: GNU privacy guard - a free PGP replacement
  GnuPG is GNU's tool for secure communication and data storage.
  It can be used to encrypt data and to create digital signatures.
