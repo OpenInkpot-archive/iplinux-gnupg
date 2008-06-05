@@ -3,7 +3,8 @@
 ##
 ## DP: Description: Small fixes for gpgv manpage (#177951)
 ## DP: Author: "Jim W. Jaszewski" <grok@sprint.ca>
-## DP: Upstream status: Not yet submitted
+## DP: Upstream status: https://bugs.g10code.com/gnupg/issue917
+## DP: Upstream status: https://bugs.g10code.com/gnupg/issue918
 ## DP: Date: 2003-01-22
 
 @DPATCH@
