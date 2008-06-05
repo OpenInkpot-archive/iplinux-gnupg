@@ -12,6 +12,8 @@ gnupg (1.4.9-2) unstable; urgency=low
   * Remove ancient (2002 and earlier) Conflicts, Replaces, Provides.
 
   [ Daniel Leidert ]
+  * debian/control: Added Vcs fields.
+    (Uploaders): Added myself.
   * debian/gpg-zip.1: Fixed header.
 
  -- Thijs Kinkhorst <thijs@debian.org>  Thu,  5 Jun 2008 10:27:33 +0200
