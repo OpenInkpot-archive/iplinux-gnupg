@@ -1,11 +1,11 @@
 gnupg (1.4.9-2) unstable; urgency=low
 
   [ Sune Vuorela ]
-  * Switch maintainer to maillist. This package is now official team
-    maintained
+  * Switch maintainer to maillist. This package is now officially team
+    maintained.
   * Really enable patches added earlier. (Really Closes: #394037, #298699)
-  * Add a seahorse conflicts as the seahorse maintainer like.
-  * remove stamp files in clean
+  * Add a seahorse conflicts as the seahorse maintainer likes.
+  * Remove stamp files in clean.
 
   [ Thijs Kinkhorst ]
   * Add watch file (Closes: #450670).
