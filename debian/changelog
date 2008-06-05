@@ -1,12 +1,16 @@
 gnupg (1.4.9-2) unstable; urgency=low
 
+  [ Sune Vuorela ]
   * Switch maintainer to maillist. This package is now official team
     maintained
   * Really enable patches added earlier. (Really Closes: #394037, #298699)
   * Add a seahorse conflicts as the seahorse maintainer like.
   * remove stamp files in clean
 
- -- Sune Vuorela <debian@pusling.com>  Wed, 04 Jun 2008 00:47:13 +0200
+  [ Thijs Kinkhorst ]
+  * Add watch file (Closes: #450670).
+
+ -- Thijs Kinkhorst <thijs@debian.org>  Thu,  5 Jun 2008 10:27:33 +0200
 
 gnupg (1.4.9-1) unstable; urgency=low
 
