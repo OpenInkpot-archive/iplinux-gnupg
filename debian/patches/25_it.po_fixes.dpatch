@@ -2,7 +2,10 @@
 ## 25_it.po_fixes.dpatch by Daniel Leidert (dale) <daniel.leidert@wgdd.de>
 ##
 ## All lines beginning with `## DP:' are a description of the patch.
-## DP: No description.
+## DP: Italian typo fix (closes: #298699).
+## DP:
+## DP: <URL:http://bugs.debian.org/298699>
+## DP: <URL:https://bugs.g10code.com/gnupg/issue920>
 
 @DPATCH@
 diff -urNad experimental~/po/it.po experimental/po/it.po

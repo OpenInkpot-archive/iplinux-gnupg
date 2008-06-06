@@ -2,7 +2,10 @@
 ## 25_fr.po_fixes.dpatch by Daniel Leidert (dale) <daniel.leidert@wgdd.de>
 ##
 ## All lines beginning with `## DP:' are a description of the patch.
-## DP: No description.
+## DP: French wording improved (closes: #394037).
+## DP:
+## DP: <URL:http://bugs.debian.org/394037>
+## DP: <URL:https://bugs.g10code.com/gnupg/issue922>
 
 @DPATCH@
 diff -urNad experimental~/po/fr.po experimental/po/fr.po
