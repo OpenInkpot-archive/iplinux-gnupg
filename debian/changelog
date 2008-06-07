@@ -68,7 +68,7 @@ gnupg (1.4.6-2.2) unstable; urgency=low
   * Non-maintainer upload.
   * Do not install gpg setuid root, this is not necessary anymore since
     Linux kernel 2.6.9. (Closes: #356550, #346597, #453122)
-  * Update priority to match override.
+  * Update priority to match override (Closes: #340846).
 
  -- Thijs Kinkhorst <thijs@debian.org>  Sat, 03 May 2008 16:20:56 +0200
 
@@ -162,7 +162,7 @@ gnupg (1.4.3-1) unstable; urgency=low
      usr/share/locale/locale.alias anymore as a result.
 
   * debian/rules (build-deb-stamp): pass --enable-mailto to configure.
-    Closes #301308
+    Closes: #301308
   * debian/rules (build-udeb-stamp): likewise.
 
   * debian/control (Build-Depends): drop mail-transport-agent and...
