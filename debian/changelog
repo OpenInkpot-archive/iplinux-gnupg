@@ -1,3 +1,9 @@
+gnupg (1.4.9-3) UNRELEASED; urgency=low
+
+  * Add Package-Type: udeb to μdebs.
+
+ -- Thijs Kinkhorst <thijs@debian.org>  Sat, 14 Jun 2008 20:22:54 +0200
+
 gnupg (1.4.9-2) unstable; urgency=low
 
   [ Sune Vuorela ]

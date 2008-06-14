@@ -42,6 +42,7 @@ Description: GNU privacy guard - signature verification tool
  make the signature are trustworthy.
 
 Package: gnupg-udeb
+XC-Package-Type: udeb
 Section: debian-installer
 Priority: extra
 Architecture: any
@@ -55,6 +56,7 @@ Description: GNU privacy guard - a free PGP replacement
  This is GnuPG packaged in minimal form for use in debian-installer.
 
 Package: gpgv-udeb
+XC-Package-Type: udeb
 Section: debian-installer
 Priority: extra
 Architecture: any
