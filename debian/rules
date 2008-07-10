@@ -157,6 +157,7 @@ binary-arch:	checkroot build # test
 	rm -rf debian/gpgv-udeb
 	$(install_dir) debian/gpgv-udeb/DEBIAN/ debian/gpgv-udeb/usr/bin/
 	$(install_binary) build-udeb/g10/gpgv debian/gpgv-udeb/usr/bin/
+	$(STRIP) debian/gpgv-udeb/usr/bin/gpgv
 	find debian/gpgv-udeb/ -type f | xargs file | grep ELF | cut -d: -f 1 | xargs dpkg-shlibdeps -Tdebian/gpgv-udeb.substvars -tudeb
 
 	: # Don't let dpkg-gencontrol write incorrect guesses to debian/files.
@@ -172,6 +173,7 @@ binary-arch:	checkroot build # test
 	rm -rf debian/gnupg-udeb
 	$(install_dir) debian/gnupg-udeb/DEBIAN/ debian/gnupg-udeb/usr/bin/
 	$(install_binary) build-udeb/g10/gpg debian/gnupg-udeb/usr/bin/
+	$(STRIP) debian/gnupg-udeb/usr/bin/gpg
 	find debian/gnupg-udeb/ -type f | xargs file | grep ELF | cut -d: -f 1 | xargs dpkg-shlibdeps -Tdebian/gnupg-udeb.substvars -tudeb
 
 	: # Don't let dpkg-gencontrol write incorrect guesses to debian/files.

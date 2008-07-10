@@ -2,8 +2,9 @@ gnupg (1.4.9-3) UNRELEASED; urgency=low
 
   * Add Package-Type: udeb to μdebs.
   * Add self to uploaders.
+  * Properly strip binaries shippped in μdebs.
 
- -- Thijs Kinkhorst <thijs@debian.org>  Thu, 10 Jul 2008 14:21:09 +0200
+ -- Thijs Kinkhorst <thijs@debian.org>  Thu, 10 Jul 2008 14:30:50 +0200
 
 gnupg (1.4.9-2) unstable; urgency=low
 
