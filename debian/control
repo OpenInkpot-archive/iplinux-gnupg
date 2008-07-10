@@ -3,7 +3,8 @@ Section: utils
 Priority: important
 Maintainer: Debian GnuPG-Maintainers <pkg-gnupg-maint@lists.alioth.debian.org>
 Uploaders: Sune Vuorela <debian@pusling.com>,
- Daniel Leidert (dale) <daniel.leidert@wgdd.de>
+ Daniel Leidert (dale) <daniel.leidert@wgdd.de>,
+ Thijs Kinkhorst <thijs@debian.org>
 Standards-Version: 3.7.3
 Build-Depends: libz-dev, libldap2-dev, libbz2-dev,
  libcap-dev [!kfreebsd-i386 !kfreebsd-amd64 !hurd-i386], libusb-dev,
