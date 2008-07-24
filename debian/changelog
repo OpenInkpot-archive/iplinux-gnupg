@@ -1,12 +1,13 @@
-gnupg (1.4.9-3) UNRELEASED; urgency=low
+gnupg (1.4.9-3) unstable; urgency=low
 
   * Add Package-Type: udeb to μdebs.
-  * Add self to uploaders.
   * Properly strip binaries shippped in μdebs.
   * Disable libusb-dev build-dep on the Hurd (closes: #491864).
+  * Updated debian/copyright to GPLv3.
   * Checked for policy 3.8.0, added README.source.
+  * Add self to uploaders.
 
- -- Thijs Kinkhorst <thijs@debian.org>  Tue, 22 Jul 2008 17:35:56 +0200
+ -- Thijs Kinkhorst <thijs@debian.org>  Thu, 24 Jul 2008 22:25:09 +0200
 
 gnupg (1.4.9-2) unstable; urgency=low
 
