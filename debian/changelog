@@ -1,3 +1,29 @@
+gnupg (1.4.9-4) unstable; urgency=low
+
+  [ Daniel Leidert (dale) ]
+  * debian/compat: Added to define debhelper compat level 5.
+  * debian/control: (Build-Depends): Added debhelper v5.
+  * debian/gnupg.dirs: Added for new debhelper-based debian/rules.
+  * debian/gnupg.docs: Ditto.
+  * debian/gnupg.links: Ditto.
+  * debian/gnupg.manpages: Ditto.
+  * debian/gnupg-udeb.install: Ditto.
+  * debian/gpgv.files: Ditto.
+  * debian/gpgv-udeb.install: Ditto.
+  * debian/rules: Complete rewrite using debhelper (closes: #437050, #430459).
+ 
+  [ Thijs Kinkhorst ]
+  * We don't install setuid root anymore, and have not even built
+    with capability support anyway in recent times. Drop libcap-dev
+    build-dependency and associated patches. (Closes: #492622).
+  * No longer install gpg-convert-from-106 in the path, but ship
+    this script to convert from GnuPG 1.0.6 and earlier as an
+    example.
+  * Add --disable-asm build flag on ppc64 architecture (Closes: #343434).
+  * Rephrase description on the subject of IDEA (Closes: #509853).
+
+ -- Thijs Kinkhorst <thijs@debian.org>  Mon, 16 Feb 2009 18:35:15 +0100
+
 gnupg (1.4.9-3) unstable; urgency=low
 
   * Add Package-Type: udeb to μdebs.
