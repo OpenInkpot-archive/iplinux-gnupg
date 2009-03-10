@@ -22,7 +22,7 @@ DEB_BUILD_ARCH    := $(shell dpkg-architecture -qDEB_BUILD_ARCH)
 CONFARGS  = --prefix=/usr --libexecdir=/usr/lib/ --enable-mailto --with-mailprog=/usr/sbin/sendmail
 
 ifneq ($(DEB_BUILD_GNU_TYPE),$(DEB_HOST_GNU_TYPE))
-CONFARGS += --host=$(DEB_HOST_GNU_TYPE)
+CONFARGS += --host=$(DEB_HOST_GNU_TYPE) --without-bzip2 --without-readline
 endif
 
 ifeq ($(DEB_BUILD_ARCH),ppc64)
@@ -56,7 +56,7 @@ build-udeb-stamp: patch-stamp build-udeb/config.status
 	$(MAKE) -C build-udeb/
 	touch $@
 
-build: build-deb-stamp build-udeb-stamp
+build: build-deb-stamp
 
 ##################################### clean ##################################
 
@@ -76,11 +76,11 @@ install: build
 	dh_installdirs
 	$(MAKE) -C build-deb install DESTDIR=$(CURDIR)/debian/gnupg
 	: # Move localized manpages to FHS compliant locations
-	mv debian/gnupg/usr/share/man/man1/gpg.ru.1 debian/gnupg/usr/share/man/ru/man1/gpg.1
+#	mv debian/gnupg/usr/share/man/man1/gpg.ru.1 debian/gnupg/usr/share/man/ru/man1/gpg.1
 	: # Remove from /usr/share/gnupg what we install into /usr/share/doc/gnupg/
 	rm -f debian/gnupg/usr/share/gnupg/FAQ \
 	      debian/gnupg/usr/share/gnupg/faq.html
-	find debian/gnupg/ -type d -empty | xargs rmdir
+	find debian/gnupg/ -type d -empty | xargs -r rmdir
 
 #################################### binary ##################################
 
@@ -88,13 +88,13 @@ binary-indep: build install
 binary-arch: build install
 	dh_testdir
 	dh_testroot
-	dh_installchangelogs
+#	dh_installchangelogs
 	# Maybe drop them and install NEWS as upstream changelog?
-	for i in po util mpi cipher tools g10 checks include; do \
-	    install -m 644 $$i/ChangeLog debian/gnupg/usr/share/doc/gnupg/changelog.$$i; \
-	done
-	install -m 644 ChangeLog debian/gnupg/usr/share/doc/gnupg/changelog.toplevel
-	dh_installdocs
+#	for i in po util mpi cipher tools g10 checks include; do \
+#	    install -m 644 $$i/ChangeLog debian/gnupg/usr/share/doc/gnupg/changelog.$$i; \
+#	done
+#	install -m 644 ChangeLog debian/gnupg/usr/share/doc/gnupg/changelog.toplevel
+#	dh_installdocs
 	dh_installexamples
 	dh_movefiles -pgpgv --sourcedir=debian/gnupg
 	dh_install
