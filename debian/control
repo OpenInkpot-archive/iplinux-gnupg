@@ -1,5 +1,5 @@
 Source: gnupg
-Section: host/tools
+Section: core
 Priority: important
 Maintainer: Mikhail Gusarov <dottedmag@dottedmag.net>
 Standards-Version: 3.8.0
