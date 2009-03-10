@@ -1,23 +1,17 @@
 Source: gnupg
-Section: utils
+Section: host/tools
 Priority: important
-Maintainer: Debian GnuPG-Maintainers <pkg-gnupg-maint@lists.alioth.debian.org>
-Uploaders: Sune Vuorela <debian@pusling.com>,
- Daniel Leidert (dale) <daniel.leidert@wgdd.de>,
- Thijs Kinkhorst <thijs@debian.org>
+Maintainer: Mikhail Gusarov <dottedmag@dottedmag.net>
 Standards-Version: 3.8.0
 Build-Depends: debhelper (>> 5), libz-dev, file, gettext, dpatch
 XCS-Cross-Host-Build-Depends: debhelper (>> 5), file, gettext, dpatch
 XCS-Cross-Build-Depends: libz1-dev
 Homepage: http://www.gnupg.org
-Vcs-Browser: http://svn.debian.org/wsvn/pkg-gnupg/gnupg/
-Vcs-Svn: svn://svn.debian.org/svn/pkg-gnupg/gnupg/trunk/
 
 Package: gpgv
 Architecture: any
 Priority: important
 Depends: ${shlibs:Depends}
-Suggests: gnupg
 Description: GNU privacy guard - signature verification tool
  GnuPG is GNU's tool for secure communication and data storage.
  .
