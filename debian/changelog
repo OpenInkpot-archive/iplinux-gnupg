@@ -1,3 +1,9 @@
+gnupg (1.4.9-4.ip4) asimov; urgency=low
+
+  * Rebuild to fix libgcc1 dependency.
+
+ -- Mikhail Gusarov <dottedmag@dottedmag.net>  Tue, 26 May 2009 23:06:33 +0700
+
 gnupg (1.4.9-4.ip3) asimov; urgency=low
 
   * Section fixed: it was errorneously set to host/tools, not to the core.
